@@ -1,0 +1,34 @@
+# X Silly Feed
+
+> A Chrome extension that transforms X.com (Twitter) into a silly, sketch-inspired newspaper aesthetic using the experimental `border-shape` CSS property.
+
+## Documentation
+
+- [README](README.md): Primary project documentation and setup instructions.
+- [Changelog](CHANGELOG.md): History of notable changes to the project.
+- [Humans](humans.txt): Information about the creator and tools used.
+- [Todo](tasks/todo.md): Current tasks and project roadmap.
+- [Lessons](tasks/lessons.md): Lessons learned and patterns identified during development.
+
+## Legal
+
+- [License](LICENSE): Apache 2.0 license requiring proper attribution.
+- [Privacy Policy](PRIVACY.md): Data handling and privacy compliance information.
+- [Terms of Service](TERMS.md): Rules and conditions for using the extension.
+- [Disclaimer](DISCLAIMER.md): Statement of non-affiliation with X/Twitter.
+
+## Landing Page
+
+- [Landing Page](landing/index.html): Themed landing page for the extension.
+
+## Extension Configuration
+
+- [Manifest](manifest.json): Extension manifest defining permissions, scripts, and assets.
+
+## Source Code
+
+- [Background Script](src/background/service_worker.js): Service worker for background tasks.
+- [Content Script](src/content/content.js): Main logic injected into X.com pages.
+- [Content Styles](src/content/styles.css): Styles defining the silly newspaper aesthetic.
+- [Popup HTML](src/popup/popup.html): User interface for the extension's popup.
+- [Popup Script](src/popup/popup.js): Interaction logic for the popup UI.

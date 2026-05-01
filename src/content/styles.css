@@ -1,0 +1,130 @@
+/* Silly Feed Theme for X.com */
+
+:root {
+  --silly-paper: #fdfbf7;
+  --silly-ink: #111111;
+  --silly-border: 2px solid var(--silly-ink);
+  --silly-font: 'Chalkboard SE', 'Comic Sans MS', 'Bradley Hand', cursive;
+}
+
+/* Base Styles */
+html.silly-enabled body {
+  background-color: var(--silly-paper) !important;
+  color: var(--silly-ink) !important;
+  font-family: var(--silly-font) !important;
+}
+
+/* Typography Overrides */
+html.silly-enabled span, 
+html.silly-enabled div, 
+html.silly-enabled a {
+  font-family: var(--silly-font) !important;
+}
+
+/* Hide some modern UI distractions if desired, but let's focus on the borders */
+
+/* Tweet Borders & Shapes */
+html.silly-enabled article[data-testid="tweet"] {
+  background-color: white !important;
+  border: var(--silly-border) !important;
+  margin: 10px 0 !important;
+  padding: 15px !important;
+  border-shape: polygon(
+    0% 1%, 25% 0%, 50% 1%, 75% 0%, 100% 2%, 
+    99% 25%, 100% 50%, 99% 75%, 98% 99%, 
+    75% 100%, 50% 99%, 25% 100%, 1% 98%, 
+    0% 75%, 1% 50%, 0% 25%
+  ) !important;
+}
+
+/* Variations using nth-child */
+html.silly-enabled article[data-testid="tweet"]:nth-child(even) {
+  border-shape: polygon(
+    1% 0%, 26% 1%, 51% 0%, 76% 1%, 99% 0%, 
+    100% 26%, 99% 51%, 100% 76%, 99% 100%, 
+    76% 99%, 51% 100%, 26% 99%, 0% 100%, 
+    1% 76%, 0% 51%, 1% 26%
+  ) !important;
+}
+
+/* Sidebar Sections */
+html.silly-enabled [data-testid="sidebarColumn"] section {
+  background-color: var(--silly-paper) !important;
+  border: var(--silly-border) !important;
+  border-shape: polygon(
+    2% 2%, 98% 0%, 100% 98%, 0% 100%
+  ) !important;
+  margin-bottom: 20px !important;
+}
+
+/* Buttons */
+html.silly-enabled [data-testid="tweetButtonInline"],
+html.silly-enabled [data-testid="SideNav_NewTweet_Button"] {
+  background-color: var(--silly-ink) !important;
+  color: white !important;
+  border: none !important;
+  border-shape: polygon(
+    5% 5%, 95% 0%, 100% 95%, 0% 100%
+  ) !important;
+  transform: rotate(-1deg);
+}
+
+/* Inputs / Search */
+html.silly-enabled [data-testid="SearchBox_Search_Input_Container"] {
+  background-color: white !important;
+  border: var(--silly-border) !important;
+  border-shape: polygon(
+    1% 1%, 99% 2%, 98% 98%, 2% 99%
+  ) !important;
+}
+
+/* Images and Media */
+html.silly-enabled [data-testid="tweetPhoto"], 
+html.silly-enabled [data-testid="videoPlayer"] {
+  border: var(--silly-border) !important;
+  border-shape: polygon(
+    0% 0%, 100% 1%, 99% 99%, 1% 100%
+  ) !important;
+  overflow: hidden;
+}
+
+/* Left Navigation */
+html.silly-enabled [data-testid="AppTabBar_Nav"] a {
+  border: 1px solid transparent !important;
+  border-radius: 0 !important;
+}
+
+html.silly-enabled [data-testid="AppTabBar_Nav"] a:hover {
+  background-color: rgba(0,0,0,0.05) !important;
+  border: 1px solid var(--silly-ink) !important;
+  border-shape: polygon(2% 0%, 98% 2%, 100% 98%, 0% 100%) !important;
+}
+
+/* Remove default tweet dividers */
+html.silly-enabled div[style*="border-bottom-color"] {
+  border-bottom: none !important;
+}
+
+/* Scrollbar Styling for that paper feel */
+html.silly-enabled ::-webkit-scrollbar {
+  width: 12px;
+}
+html.silly-enabled ::-webkit-scrollbar-track {
+  background: var(--silly-paper);
+}
+html.silly-enabled ::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border: 2px solid var(--silly-paper);
+  border-radius: 0;
+}
+
+/* Modals and Popups */
+html.silly-enabled #layers > div:nth-child(2) > div > div > div > div > div > div.css-175oi2r.r-1ny4l3l.r-18u37iz.r-1pi2tsx.r-1777fci.r-1xcajam.r-ipm5af.r-g6jmlv.r-1habvwh > div.css-175oi2r.r-1wbh5a2.r-htvplk.r-1udh08x.r-1867qdf.r-rsyp9y.r-1pjcn9w.r-1potc6q {
+  background-color: var(--silly-paper) !important;
+  border: var(--silly-border) !important;
+  border-shape: polygon(
+    2% 2%, 98% 0%, 100% 98%, 0% 100%
+  ) !important;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.1) !important;
+}
+

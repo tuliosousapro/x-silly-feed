@@ -1,0 +1,10 @@
+/*TEAM*/
+Creator: Túlio Sousa
+GitHub: <https://github.com/tuliosousapro>
+From: Earth
+
+/*SITE*/
+Last update: 2026-05-01
+Language: English
+Doctype: Chrome Extension
+Tools: Antigravity, VS Code, GitHub, Gemini CLI

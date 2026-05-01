@@ -1,0 +1,6 @@
+{
+  "name": "x-silly-feed",
+  "description": "Chrome extension for a silly, sketch-inspired X.com UI.",
+  "tech_stack": ["Manifest V3", "CSS", "JavaScript"],
+  "experimental_features": ["border-shape"]
+}
