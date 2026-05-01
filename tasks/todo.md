@@ -1,32 +1,27 @@
-# Task List - X Silly Feed Landing Page Revamp
+# Task List - X Silly Feed Landing Page: The Living Notebook
 
-- [x] Design Brutalist Bento Grid for Features <!-- id: 14 -->
-- [x] Implement 5th-Grade Level Copy (Fun & Clear) <!-- id: 15 -->
-- [x] Create Demo Placeholder (Sketch Style) <!-- id: 16 -->
-- [x] Update Typography to match "Notebook" feel <!-- id: 17 -->
-- [x] Final Responsive Check (Desktop & Mobile) <!-- id: 18 -->
-
+- [ ] Build "Paper & Ink" CSS Foundation (Vanilla CSS) <!-- id: 25 -->
+- [ ] Create Kinetic Typography Engine (Jitter effect) <!-- id: 26 -->
+- [ ] Implement "Silly Slider" Hero Section <!-- id: 27 -->
+- [ ] Design "Sticky Note" Bento Grid 2.0 <!-- id: 28 -->
+- [ ] Add Scroll-Triggered SVG Drawing Animations <!-- id: 29 -->
+- [ ] Performance Polish (Asset optimization, 95+ Lighthouse) <!-- id: 30 -->
 
 ## Plan Details
 
-### 1. Hero Section
-- **Headline:** "Make Your Boring Feed Look Like a Silly Sketch!"
-- **Sub-headline:** "X Silly Feed is a free tool. It doesn't stop you from looking at posts, but it makes every post look like a fun drawing. It’s doomscrolling, but way better!"
-- **Demo:** Large sketch-style box with "FUTURE DEMO HERE" text.
+### 1. Hero: "The Silly Slider"
+- **Interaction**: A slider that users can drag to see a "Boring" feed turn into a "Silly" one.
+- **Visual**: Hand-drawn arrows pointing to the slider with "DRAG ME!" text.
 
-### 2. Features (Bento Grid)
-- **Block 1:** Hand-Drawn UI (It looks like a notebook!)
-- **Block 2:** Fast & Light (It won't slow you down)
-- **Block 3:** Total Privacy (We don't spy on you)
-- **Block 4:** Fun Fonts (Better than boring ones)
+### 2. Bento: "The Messy Desk"
+- **Layout**: Features as overlapping sticky notes and scraps of paper.
+- **Style**: Each note has a unique rotation and a different "highlighter" background color.
 
-### 3. Visuals
-- Strict Brutalist (Sharp 4px borders, black shadows)
-- Squiggle effects on text
-- Paper texture (keep current)
+### 3. Interactions
+- **Drawing**: As you scroll to the "Features" section, a marker scribbles a circle around the main feature.
+- **Wobble**: Subtle `:hover` wobble on all "taped" elements.
 
-### 4. Language
-- 5th Grade Level
-- Fun and engaging
-- No grammar mistakes
-- Correct value prop: "More fun doomscrolling" not "Stop doomscrolling"
+### 4. Tech Stack
+- **CSS**: Pure Vanilla (No frameworks).
+- **JS**: Minimal, optimized for 60fps animations.
+- **Fonts**: 'Caveat', 'Permanent Marker', 'Fredoka'.

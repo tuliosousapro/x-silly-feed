@@ -3,324 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Silly Feed | The Unserious Extension</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>X Silly Feed | The Living Notebook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=Caveat:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        :root {
-            --bg: #FAFAFA;
-            --ink: #09090B;
-            --accent: #EC4899; /* Pink */
-            --yellow: #FACC15;
-            --paper: #FDFCF8;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--ink);
-            font-family: 'Nunito', sans-serif;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Fredoka', sans-serif;
-            letter-spacing: -0.01em;
-        }
-
-        .sketchy-text {
-            font-family: 'Caveat', cursive;
-        }
-
-        /* Neubrutalism Shadows & Borders */
-        .brutal-card {
-            background: white;
-            border: 4px solid var(--ink);
-            box-shadow: 8px 8px 0px 0px var(--ink);
-            transition: transform 0.2s cubic-bezier(.175,.885,.32,1.275);
-        }
-
-        .brutal-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0px 0px var(--ink);
-        }
-
-        .brutal-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: var(--yellow);
-            border: 4px solid var(--ink);
-            box-shadow: 6px 6px 0px 0px var(--ink);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.1s ease;
-            cursor: pointer;
-        }
-
-        .brutal-btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 4px 4px 0px 0px var(--ink);
-        }
-
-        .brutal-btn-pink {
-            background-color: var(--accent);
-            color: white;
-        }
-
-        /* Animated Squiggles (SVG Filters) */
-        .squiggle {
-            filter: url(#squiggle);
-        }
-
-        /* Newspaper Column Layout */
-        .columns {
-            column-count: 1;
-            column-gap: 2rem;
-        }
-        @media (min-width: 768px) {
-            .columns { column-count: 2; }
-        }
-        @media (min-width: 1024px) {
-            .columns { column-count: 3; }
-        }
-
-        .drop-cap::first-letter {
-            float: left;
-            font-size: 4rem;
-            line-height: 0.8;
-            padding: 0.5rem 0.5rem 0.5rem 0;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 800;
-        }
-
-        .paper-texture {
-            background-image: url('https://www.transparenttextures.com/patterns/paper.png');
-            background-repeat: repeat;
-        }
-
-        /* Marker Highlight */
-        .highlight {
-            background: linear-gradient(120deg, #facc15 0%, #facc15 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 0.3em;
-            background-position: 0 88%;
-            transition: background-size 0.25s ease-in;
-        }
-
-        .marker-scribble {
-            position: relative;
-        }
-        .marker-scribble::after {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: var(--accent);
-            z-index: -1;
-            opacity: 0.4;
-            transform: rotate(-1deg);
-            border-radius: 100% 2% 100% 2%;
-        }
-
-        /* Bento Grid */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 1.5rem;
-        }
-        @media (min-width: 768px) {
-            .bento-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            .bento-item-large {
-                grid-column: span 2;
-                grid-row: span 2;
-            }
-            .bento-item-wide {
-                grid-column: span 2;
-            }
-        }
-
-    </style>
 </head>
-<body class="paper-texture">
-    <!-- SVG Squiggle Filter -->
+<body>
+    <!-- SVG Filters for Wobble -->
     <svg style="display: none;">
         <defs>
-            <filter id="squiggle">
-                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+            <filter id="wobble">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" result="noise" />
                 <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
             </filter>
         </defs>
     </svg>
 
-    <!-- Top Bar -->
-    <div class="border-b-4 border-black bg-white p-2 text-center text-xs font-black uppercase tracking-widest">
-        The Daily Silly — Established 2026 — Edition #001
-    </div>
+    <nav class="container" style="padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 100;">
+        <div class="jitter" style="font-family: var(--font-marker); font-size: 1.5rem; border: 2px solid var(--ink); padding: 0.5rem 1rem; background: white; transform: rotate(-2deg);">
+            X SILLY FEED
+        </div>
+        <div style="display: flex; gap: 2rem; font-family: var(--font-hand); font-size: 1.25rem; font-weight: bold;">
+            <a href="#features" style="color: inherit; text-decoration: none;" class="highlight-yellow">Features</a>
+            <a href="#demo" style="color: inherit; text-decoration: none;" class="highlight-pink">Demo</a>
+            <a href="https://github.com/tuliosousapro/x-silly-feed-ui" style="color: inherit; text-decoration: none;">GitHub</a>
+        </div>
+    </nav>
 
-    <div class="max-w-7xl mx-auto px-4 py-8 md:py-16">
-        <!-- Masthead -->
-        <header class="mb-16 text-center">
-            <h1 class="text-7xl md:text-9xl font-black uppercase leading-[0.8] mb-4 squiggle">
-                X Silly <br class="hidden md:block"> Feed
-            </h1>
-            <div class="flex items-center justify-center gap-4">
-                <span class="h-1 bg-black w-12 hidden md:block"></span>
-                <p class="text-xl md:text-3xl font-semibold italic">
-                    Same <span class="marker-scribble">Doomscrolling</span>. More <span class="sketchy-text text-accent text-4xl">Giggles</span>.
-                </p>
-                <span class="h-1 bg-black w-12 hidden md:block"></span>
-            </div>
-        </header>
+    <header class="container" style="padding: 6rem 0; text-align: center;">
+        <h1 style="font-size: clamp(3rem, 10vw, 6rem); margin-bottom: 2rem; position: relative; display: inline-block;">
+            Make Your Feed <br> 
+            <span class="highlight-yellow jitter scribble-trigger" style="position: relative;">
+                Way More Silly!
+                <svg class="scribble-container" viewBox="0 0 400 100" preserveAspectRatio="none">
+                    <path class="scribble-path" d="M10,80 Q100,95 200,85 T390,75" stroke="var(--pink)" />
+                </svg>
+            </span>
+        </h1>
+        <p class="sketchy-text" style="font-size: 2rem; max-width: 800px; margin: 0 auto 3rem;">
+            X Silly Feed turns your boring social media into a fun, hand-drawn sketchbook. It's like <span class="highlight-pink">doomscrolling in a comic book!</span>
+        </p>
+        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+            <a href="#" class="btn">Get it for Chrome</a>
+            <a href="#demo" class="btn btn-pink">See the Magic</a>
+        </div>
+    </header>
 
-
-        <!-- Hero Section -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
-            <div class="lg:col-span-7 space-y-8">
-                <div class="brutal-card p-8 bg-paper relative">
-                    <span class="absolute -top-4 -left-4 bg-yellow border-4 border-black px-4 py-1 font-black text-sm uppercase">Headline</span>
-                    <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 uppercase">
-                        Make Your Boring Feed <br> Look Like a <br> Silly Sketch!
-                    </h2>
-                    <p class="text-xl leading-relaxed drop-cap mb-6 font-semibold">
-                        X Silly Feed is a free tool for your browser. It doesn't stop you from looking at posts, but it makes every post look like a fun drawing. It’s doomscrolling, but way better!
-                    </p>
-                    <p class="text-lg leading-relaxed mb-8 opacity-80">
-                        We use cool tech to make lines wiggle. Your timeline will look like it was drawn in a notebook with a thick marker.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink">
-                            <i data-lucide="download" class="mr-2 w-5 h-5"></i>
-                            Add to Chrome (Free)
-                        </a>
-                        <a href="#features" class="brutal-btn bg-white">
-                            See how it works
-                        </a>
+    <section id="demo" class="container" style="padding: 4rem 0;">
+        <div class="wobbly-box" style="padding: 0.5rem; background: #eee; overflow: hidden; position: relative;">
+            <div class="tape tape-top"></div>
+            <!-- Silly Slider Container -->
+            <div id="silly-slider" style="position: relative; width: 100%; aspect-ratio: 16/9; cursor: ew-resize; user-select: none;">
+                <!-- Boring Side -->
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff url('assets/image.png') no-repeat center/cover; filter: grayscale(1);">
+                </div>
+                <!-- Silly Side -->
+                <div id="silly-layer" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: #fff url('assets/image.png') no-repeat center/cover; border-right: 4px solid var(--pink); overflow: hidden; filter: url(#wobble) sepia(0.2) contrast(1.2);">
+                    <div style="position: absolute; top: 20px; right: 20px; background: var(--pink); color: white; padding: 0.5rem 1rem; font-family: var(--font-marker); transform: rotate(5deg);">SILLY!</div>
+                </div>
+                <!-- Handle -->
+                <div id="slider-handle" style="position: absolute; top: 0; left: 50%; width: 40px; height: 100%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; z-index: 10;">
+                    <div style="width: 4px; height: 100%; background: var(--pink);"></div>
+                    <div style="width: 40px; height: 40px; background: white; border: 3px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                        <i data-lucide="move-horizontal" style="width: 20px; height: 20px;"></i>
                     </div>
                 </div>
             </div>
+            <p class="sketchy-text" style="text-align: center; margin-top: 1.5rem; font-size: 1.5rem; font-weight: bold;">
+                <i data-lucide="arrow-up" style="vertical-align: middle; margin-right: 0.5rem;"></i>
+                Drag to see the transformation!
+            </p>
+        </div>
+    </section>
 
-            <div class="lg:col-span-5 flex items-center justify-center relative">
-                <div class="w-full aspect-square brutal-card bg-white flex items-center justify-center rotate-3 relative z-10 border-dashed border-8 border-gray-200">
-                     <div class="text-center p-8">
-                        <i data-lucide="image" class="w-24 h-24 mx-auto mb-4 text-gray-300"></i>
-                        <p class="text-3xl font-black uppercase text-gray-400">Future Demo Here</p>
-                        <p class="text-sm opacity-60 italic text-gray-400">Imagine a really cool sketch of your feed!</p>
-                     </div>
-                </div>
-                <!-- Background decorative elements -->
-                <div class="absolute inset-0 border-4 border-black -rotate-3 z-0 translate-x-4 translate-y-4"></div>
-                <div class="absolute -top-8 -right-8 w-24 h-24 bg-yellow rounded-full border-4 border-black z-0 flex items-center justify-center">
-                    <span class="font-black text-2xl">WOW!</span>
-                </div>
+    <section id="features" class="container" style="padding: 6rem 0;">
+        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Why it's Awesome</h2>
+        <div class="bento-grid">
+            <div class="sticky-note note-yellow" style="--rotation: 0.2;">
+                <i data-lucide="pen-tool" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Wobbly Lines</h3>
+                <p class="sketchy-text" style="font-size: 1.25rem;">Every post box and button is redrawn with sketchy, irregular lines. It feels alive!</p>
+            </div>
+            <div class="sticky-note note-pink" style="--rotation: -0.5;">
+                <i data-lucide="zap" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Supafast</h3>
+                <p class="sketchy-text" style="font-size: 1.25rem;">Zero lag. Maximum giggle-per-second performance. We use lightweight SVG magic.</p>
+            </div>
+            <div class="sticky-note note-blue" style="--rotation: 0.8;">
+                <i data-lucide="lock" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Private</h3>
+                <p class="sketchy-text" style="font-size: 1.25rem;">No tracking. No spying. Just locally rendered wiggles on your screen.</p>
+            </div>
+            <div class="sticky-note note-green" style="--rotation: -0.3;">
+                <i data-lucide="laugh" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
+                <h3>Pure Fun</h3>
+                <p class="sketchy-text" style="font-size: 1.25rem;">Because the internet is too serious. Let's make it look like a notebook!</p>
             </div>
         </div>
+    </section>
 
-
-        <!-- Section Divider -->
-        <div class="flex items-center gap-4 mb-16">
-            <div class="h-2 flex-grow border-y-2 border-black"></div>
-            <h2 id="features" class="text-3xl font-black uppercase px-4 whitespace-nowrap">The Playbook</h2>
-            <div class="h-2 flex-grow border-y-2 border-black"></div>
+    <footer class="container" style="padding: 4rem 0; text-align: center; border-top: 3px dashed var(--ink);">
+        <p class="sketchy-text" style="font-size: 1.25rem; margin-bottom: 1rem;">
+            Built with <i data-lucide="heart" style="width: 1rem; height: 1rem; fill: var(--pink); color: var(--pink);"></i> by Túlio Sousa
+        </p>
+        <div style="display: flex; justify-content: center; gap: 2rem; font-family: var(--font-hand); font-weight: bold;">
+            <a href="page.html?doc=PRIVACY" style="color: inherit;">Privacy</a>
+            <a href="page.html?doc=TERMS" style="color: inherit;">Terms</a>
+            <a href="https://github.com/tuliosousapro/x-silly-feed-ui" style="color: inherit;">GitHub</a>
         </div>
+    </footer>
 
-        <!-- Bento Features Grid -->
-        <div class="bento-grid mb-24">
-            <!-- Large Item -->
-            <div class="bento-item-large brutal-card p-8 bg-yellow flex flex-col justify-between group overflow-hidden relative">
-                <div class="relative z-10">
-                    <i data-lucide="pen-tool" class="w-16 h-16 text-black mb-6 group-hover:rotate-12 transition-transform"></i>
-                    <h3 class="text-4xl font-black uppercase mb-4">Hand-Drawn UI</h3>
-                    <p class="text-lg leading-relaxed font-semibold">
-                        Every box and button looks like it was drawn in a notebook. No more boring straight lines!
-                    </p>
-                </div>
-                <div class="absolute bottom-0 right-0 opacity-10 group-hover:opacity-20 transition-opacity">
-                    <i data-lucide="pen-tool" class="w-48 h-48 -mr-12 -mb-12"></i>
-                </div>
-            </div>
-
-            <!-- Wide Item -->
-            <div class="bento-item-wide brutal-card p-8 bg-pink-400 group">
-                <div class="flex items-start gap-6">
-                    <div class="shrink-0">
-                        <i data-lucide="zap" class="w-12 h-12 text-black"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-black uppercase mb-2">Fast & Light</h3>
-                        <p class="text-sm leading-relaxed font-semibold">
-                            It won't slow you down. It just makes your serotonin go up!
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Small Item 1 -->
-            <div class="brutal-card p-8 bg-blue-400 group">
-                <i data-lucide="shield-check" class="w-10 h-10 text-black mb-4"></i>
-                <h3 class="text-xl font-black uppercase mb-2">Total Privacy</h3>
-                <p class="text-xs font-semibold">
-                    We don't spy on you. We just make lines wiggle.
-                </p>
-            </div>
-
-            <!-- Small Item 2 -->
-            <div class="brutal-card p-8 bg-emerald-400 group">
-                <i data-lucide="type" class="w-10 h-10 text-black mb-4"></i>
-                <h3 class="text-xl font-black uppercase mb-2">Fun Fonts</h3>
-                <p class="text-xs font-semibold">
-                    Better than those boring fonts you usually see.
-                </p>
-            </div>
-        </div>
-
-
-
-
-        <!-- CTA Footer -->
-        <section class="brutal-card bg-ink p-12 text-center text-white space-y-8 mb-24">
-            <h2 class="text-5xl md:text-7xl font-black uppercase">Join the Silly Fun</h2>
-            <p class="text-2xl opacity-80 max-w-2xl mx-auto">
-                Stop looking at boring boxes. Make your timeline fun to look at!
-            </p>
-            <div class="pt-8">
-                <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink text-black text-2xl px-12 py-6">
-                    Get it now
-                </a>
-            </div>
-            <p class="text-xs uppercase opacity-40 font-black tracking-widest italic">
-                It's free, it's fast, and it's fun!
-            </p>
-        </section>
-
-
-        <!-- Footer -->
-        <footer class="text-center space-y-6 pt-12 border-t-2 border-dashed border-black">
-            <div class="flex flex-wrap justify-center gap-8 font-black uppercase text-sm">
-                <a href="page.html?doc=PRIVACY" class="hover:text-accent">Privacy</a>
-                <a href="page.html?doc=TERMS" class="hover:text-accent">Terms</a>
-                <a href="page.html?doc=DISCLAIMER" class="hover:text-accent">Disclaimer</a>
-                <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="hover:text-accent">GitHub</a>
-            </div>
-            <p class="text-xs font-bold opacity-60">
-                &copy; 2026 X Silly Feed. Built with pure spite for boring UIs. <br>
-                Independent project. No affiliation with X/Twitter Corp.
-            </p>
-            <div class="sketchy-text text-2xl text-accent opacity-50">
-                Wiggle wiggle!
-            </div>
-        </footer>
-    </div>
-
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

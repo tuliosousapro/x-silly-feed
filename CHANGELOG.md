@@ -12,9 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `llms.txt` for better LLM navigation.
 - Sketch-inspired newspaper-themed landing page.
 - Comprehensive README.md overhaul inspired by SaaS-blueprint.
-- Complete landing page rebuild (v2) with Neubrutalism style.
-- Moved landing page and documentation assets to `docs/` directory.
-- Performed a full security audit; confirmed zero data collection and Manifest V3 compliance.
+- Complete landing page rebuild (v3) "The Living Notebook" with kinetic typography, Silly Slider, and high-performance Vanilla CSS.
+- Implemented scroll-triggered SVG drawing animations.
+- Replaced Tailwind CDN with custom Vanilla CSS for optimized performance.
 
 
 ## [0.1.0] - 2026-05-01

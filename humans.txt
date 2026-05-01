@@ -7,4 +7,4 @@ From: Earth
 Last update: 2026-05-01
 Language: English
 Doctype: Chrome Extension
-Tools: Antigravity, VS Code, GitHub, Gemini CLI
+Tools: Antigravity, VS Code, GitHub, Gemini CLI, Vanilla CSS
