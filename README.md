@@ -120,10 +120,12 @@ Contributions are what make the internet silly! Whether it's fixing a CSS bug or
 4. Push to the Branch (`git push origin feature/SillyFeature`)
 5. Open a Pull Request
 
+## Disclaimer
+Independent Project
+
+X Silly Feed is an independent, community-driven project. It is not affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with X Corp, Twitter, or any of its subsidiaries or its affiliates. [Full disclaimer](https://github.com/tuliosousapro/x-silly-feed/blob/a9e02317427b46a614e3a4b68cb29f61edc8bcd7/DISCLAIMER.md)
+
 ---
 
-<div align="center">
-
-Built with 🖋️ and ☕ by [Túlio Sousa](https://github.com/tuliosousapro)
-
-</div>
+**Since 2026** | [Túlio Sousa](https://github.com/tuliosousapro)
+> <a href="https://x.com/tuliosousapro"><img src="https://img.shields.io/badge/Follow_ME-000000.svg?style=for-the-badge&logo=X&logoColor=white"></a>
