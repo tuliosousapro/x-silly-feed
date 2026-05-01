@@ -106,7 +106,7 @@ This project is fully documented for both humans and machines:
 - **[License](LICENSE)**: Apache 2.0 (Attribution required)
 - **[Privacy Policy](PRIVACY.md)**: We collect zero data.
 - **[Terms of Service](TERMS.md)**: The fine print.
-- **[Disclaimer](DISCLAIMER.md)**: Not affiliated with X or Twitter.
+- **[Disclaimer](DISCLAIMER.md)**: X Silly Feed is an independent, community-driven project. It is not affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with X Corp, Twitter, or any of its subsidiaries or its affiliates.
 
 ---
 
@@ -119,11 +119,6 @@ Contributions are what make the internet silly! Whether it's fixing a CSS bug or
 3. Commit your Changes (`git commit -m 'Add some Sillyness'`)
 4. Push to the Branch (`git push origin feature/SillyFeature`)
 5. Open a Pull Request
-
-## Disclaimer
-Independent Project
-
-X Silly Feed is an independent, community-driven project. It is not affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with X Corp, Twitter, or any of its subsidiaries or its affiliates. [Full disclaimer](https://github.com/tuliosousapro/x-silly-feed/blob/a9e02317427b46a614e3a4b68cb29f61edc8bcd7/DISCLAIMER.md)
 
 ---
 
