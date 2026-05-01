@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `llms.txt` for better LLM navigation.
 - Sketch-inspired newspaper-themed landing page.
 - Comprehensive README.md overhaul inspired by SaaS-blueprint.
+- Complete landing page rebuild (v2) with Neubrutalism style.
+- Moved landing page and documentation assets to `docs/` directory.
 
 
 ## [0.1.0] - 2026-05-01

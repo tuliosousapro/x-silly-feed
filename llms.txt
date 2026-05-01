@@ -19,7 +19,7 @@
 
 ## Landing Page
 
-- [Landing Page](landing/index.html): Themed landing page for the extension.
+- [Landing Page](docs/index.html): Themed landing page for the extension.
 
 ## Extension Configuration
 

@@ -3,149 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Silly Feed - Extra! Extra! Read All About It!</title>
+    <title>X Silly Feed | The Unserious Extension</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Libre+Baskerville:wght@400;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
-            --news-cream: #f9f7f1;
-            --ink-black: #1a1a1a;
+            --bg: #FAFAFA;
+            --ink: #09090B;
+            --accent: #EC4899; /* Pink */
+            --yellow: #FACC15;
+            --paper: #FDFCF8;
         }
+
         body {
-            background-color: var(--news-cream);
-            color: var(--ink-black);
-            font-family: 'Libre Baskerville', serif;
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: 'Nunito', sans-serif;
+            overflow-x: hidden;
         }
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
+
+        h1, h2, h3, h4 {
+            font-family: 'Fredoka', sans-serif;
+            letter-spacing: -0.01em;
         }
-        .sketchy-accent {
+
+        .sketchy-text {
             font-family: 'Caveat', cursive;
-            color: #d946ef; /* Playful magenta */
         }
-        .brutal-border {
-            border: 3px solid var(--ink-black);
-            box-shadow: 6px 6px 0px 0px var(--ink-black);
+
+        /* Neubrutalism Shadows & Borders */
+        .brutal-card {
+            background: white;
+            border: 4px solid var(--ink);
+            box-shadow: 8px 8px 0px 0px var(--ink);
+            transition: transform 0.2s cubic-bezier(.175,.885,.32,1.275);
         }
+
+        .brutal-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px var(--ink);
+        }
+
         .brutal-btn {
-            background-color: #facc15; /* Yellow */
-            border: 3px solid var(--ink-black);
-            box-shadow: 4px 4px 0px 0px var(--ink-black);
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--yellow);
+            border: 4px solid var(--ink);
+            box-shadow: 6px 6px 0px 0px var(--ink);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             transition: all 0.1s ease;
+            cursor: pointer;
         }
+
         .brutal-btn:hover {
             transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px var(--ink-black);
+            box-shadow: 4px 4px 0px 0px var(--ink);
         }
-        .newspaper-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+
+        .brutal-btn-pink {
+            background-color: var(--accent);
+            color: white;
         }
-        @media (max-width: 768px) {
-            .newspaper-grid {
-                grid-template-columns: 1fr;
-            }
+
+        /* Animated Squiggles (SVG Filters) */
+        .squiggle {
+            filter: url(#squiggle);
         }
-        .column-divider {
-            border-right: 1px solid rgba(26, 26, 26, 0.2);
+
+        /* Newspaper Column Layout */
+        .columns {
+            column-count: 1;
+            column-gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .columns { column-count: 2; }
+        }
+        @media (min-width: 1024px) {
+            .columns { column-count: 3; }
+        }
+
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4rem;
+            line-height: 0.8;
+            padding: 0.5rem 0.5rem 0.5rem 0;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 800;
+        }
+
+        .paper-texture {
+            background-image: url('https://www.transparenttextures.com/patterns/paper.png');
+            background-repeat: repeat;
+        }
+
+        /* Marker Highlight */
+        .highlight {
+            background: linear-gradient(120deg, #facc15 0%, #facc15 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.3em;
+            background-position: 0 88%;
+            transition: background-size 0.25s ease-in;
+        }
+
+        .marker-scribble {
+            position: relative;
+        }
+        .marker-scribble::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--accent);
+            z-index: -1;
+            opacity: 0.4;
+            transform: rotate(-1deg);
+            border-radius: 100% 2% 100% 2%;
         }
     </style>
 </head>
-<body class="p-4 md:p-8">
-    <div class="max-w-6xl mx-auto">
-        <!-- Header / Masthead -->
-        <header class="border-b-4 border-black pb-4 mb-8 text-center relative">
-            <div class="flex justify-between items-end mb-4 px-2 text-sm font-bold uppercase tracking-widest">
-                <span>Vol. 01 — No. 01</span>
-                <span>Internet, Planet Earth</span>
-                <span>Friday, May 1, 2026</span>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-black leading-none mb-2">X Silly Feed</h1>
-            <p class="text-xl md:text-2xl font-bold border-t border-black pt-2 inline-block italic">
-                The World's Most <span class="sketchy-accent text-3xl">Unserious</span> Social Media Experience
-            </p>
-            <div class="absolute -top-4 -right-4 rotate-12 bg-magenta-500 hidden md:block">
-                <span class="sketchy-accent text-2xl bg-white px-2 border-2 border-black">Silly!</span>
+<body class="paper-texture">
+    <!-- SVG Squiggle Filter -->
+    <svg style="display: none;">
+        <defs>
+            <filter id="squiggle">
+                <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Top Bar -->
+    <div class="border-b-4 border-black bg-white p-2 text-center text-xs font-black uppercase tracking-widest">
+        The Daily Silly — Established 2026 — Edition #001
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-16">
+        <!-- Masthead -->
+        <header class="mb-16 text-center">
+            <h1 class="text-7xl md:text-9xl font-black uppercase leading-[0.8] mb-4 squiggle">
+                X Silly <br class="hidden md:block"> Feed
+            </h1>
+            <div class="flex items-center justify-center gap-4">
+                <span class="h-1 bg-black w-12 hidden md:block"></span>
+                <p class="text-xl md:text-3xl font-semibold italic">
+                    Stop <span class="marker-scribble">Doomscrolling</span>. Start <span class="sketchy-text text-accent text-4xl">Giggling</span>.
+                </p>
+                <span class="h-1 bg-black w-12 hidden md:block"></span>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="newspaper-grid">
-            <!-- Left Column: Main Story -->
-            <section class="column-divider pr-0 md:pr-8">
-                <div class="brutal-border p-6 mb-8 bg-white overflow-hidden relative">
-                    <h2 class="text-4xl font-bold mb-4">BREAKING: Local Man Turns X.com into Sketchbook!</h2>
-                    <p class="text-lg mb-4 leading-relaxed">
-                        In a shocking turn of events, users are reporting that their social media feeds are beginning to look like hand-drawn newspapers from the 1920s. The phenomenon, caused by the "X Silly Feed" extension, uses experimental CSS to replace rigid boxes with organic, wiggly shapes.
+        <!-- Hero Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="brutal-card p-8 bg-paper relative">
+                    <span class="absolute -top-4 -left-4 bg-yellow border-4 border-black px-4 py-1 font-black text-sm uppercase">Headline</span>
+                    <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 uppercase">
+                        CSS Magic Transforms <br> Internet "Opinions" <br> Into Fine Art
+                    </h2>
+                    <p class="text-xl leading-relaxed drop-cap mb-6 font-semibold">
+                        n a world where timelines are filled with 280-character manifestos and rage-bait, one extension dares to ask: "What if it all looked like a kid's drawing?" 
                     </p>
-                    <div class="aspect-video bg-gray-100 border-2 border-black flex items-center justify-center mb-4 relative group">
-                        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper.png')] opacity-30"></div>
-                        <i data-lucide="image" class="w-12 h-12 text-gray-400"></i>
-                        <span class="absolute bottom-2 left-2 text-xs italic opacity-60">Fig 1. A very serious representation of a silly feed.</span>
-                    </div>
-                    <p class="mb-4">
-                        "I couldn't take the doomscrolling anymore," says creator Túlio Sousa. "Now, every terrible take looks like it was scribbled by a frantic Victorian journalist. It's much better."
+                    <p class="text-lg leading-relaxed mb-8 opacity-80">
+                        X Silly Feed uses experimental <code class="bg-gray-100 px-2 py-1 border-2 border-black font-bold">border-shape</code> technology to wiggle your way into a better mental state.
                     </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <article>
-                        <h3 class="text-2xl font-bold mb-2 border-b-2 border-black">Organic Borders</h3>
-                        <p class="text-sm">Uses the cutting-edge `border-shape` property to create hand-drawn effects without heavy images or complex SVG filters. Pure CSS magic.</p>
-                    </article>
-                    <article>
-                        <h3 class="text-2xl font-bold mb-2 border-b-2 border-black">Paper Texture</h3>
-                        <p class="text-sm">Subtle paper grains and ink-like typography transport your feed from Silicon Valley to a dusty newsstand.</p>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Right Column: Sidebar -->
-            <aside class="space-y-8">
-                <div class="brutal-btn p-8 text-center">
-                    <h3 class="text-3xl font-bold mb-4">GET THE APP!</h3>
-                    <p class="mb-6 font-bold">Transform your timeline today.</p>
-                    <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="inline-block bg-black text-white px-6 py-3 font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">
-                        Download Unpacked
-                    </a>
-                    <p class="mt-4 text-[10px] uppercase font-bold opacity-70 italic">Requires Chrome 147+ (Canary)</p>
-                </div>
-
-                <div class="border-2 border-black p-4 bg-white">
-                    <h3 class="text-xl font-bold mb-2 uppercase border-b border-black">Weather Report</h3>
-                    <div class="flex items-center gap-4">
-                        <i data-lucide="cloud-rain" class="w-8 h-8"></i>
-                        <p class="text-sm italic">Cloudy with a chance of <span class="sketchy-accent font-bold">silly tweets</span>.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink">
+                            <i data-lucide="download" class="mr-2 w-5 h-5"></i>
+                            Get The Extension
+                        </a>
+                        <a href="#features" class="brutal-btn bg-white">
+                            See How It Works
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold uppercase border-b-2 border-black">Features</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Custom Sketchy Fonts</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Hand-Drawn Buttons</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> No Data Collection</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Pure Unfiltered Joy</li>
-                    </ul>
+            <div class="lg:col-span-5 flex items-center justify-center relative">
+                <div class="w-full aspect-square brutal-card bg-white flex items-center justify-center rotate-3 relative z-10">
+                     <div class="text-center p-8">
+                        <i data-lucide="sparkles" class="w-16 h-16 mx-auto mb-4 text-accent animate-pulse"></i>
+                        <p class="text-2xl font-black uppercase">Real-Time Sketching</p>
+                        <p class="text-sm opacity-60 italic">Fig 1. Actual simulation of joy.</p>
+                     </div>
                 </div>
-            </aside>
-        </main>
+                <!-- Background decorative elements -->
+                <div class="absolute inset-0 border-4 border-black -rotate-3 z-0 translate-x-4 translate-y-4"></div>
+                <div class="absolute -top-8 -right-8 w-24 h-24 bg-yellow rounded-full border-4 border-black z-0 flex items-center justify-center">
+                    <span class="font-black text-2xl">WOW!</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="flex items-center gap-4 mb-16">
+            <div class="h-2 flex-grow border-y-2 border-black"></div>
+            <h2 id="features" class="text-3xl font-black uppercase px-4 whitespace-nowrap">The Playbook</h2>
+            <div class="h-2 flex-grow border-y-2 border-black"></div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+            <!-- Feature 1 -->
+            <div class="space-y-4 group">
+                <div class="w-16 h-16 brutal-card bg-yellow flex items-center justify-center mb-6 group-hover:bg-accent transition-colors">
+                    <i data-lucide="pen-tool" class="w-8 h-8 text-black group-hover:text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black uppercase">Hand-Drawn UI</h3>
+                <p class="text-sm leading-relaxed opacity-70 font-semibold">
+                    Every box, button, and profile picture gets the 'scribble' treatment. No more boring straight lines.
+                </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="space-y-4 group">
+                <div class="w-16 h-16 brutal-card bg-pink-400 flex items-center justify-center mb-6 group-hover:bg-yellow transition-colors">
+                    <i data-lucide="type" class="w-8 h-8 text-black"></i>
+                </div>
+                <h3 class="text-2xl font-black uppercase">Newsprint Type</h3>
+                <p class="text-sm leading-relaxed opacity-70 font-semibold">
+                    Carefully curated font pairings that make even the worst "ratio" look like a respectable editorial piece.
+                </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="space-y-4 group">
+                <div class="w-16 h-16 brutal-card bg-blue-400 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-black group-hover:text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black uppercase">Zero Tracking</h3>
+                <p class="text-sm leading-relaxed opacity-70 font-semibold">
+                    Privacy isn't a joke. We collect 0.0% of your data. The only thing we track is your smile (locally).
+                </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="space-y-4 group">
+                <div class="w-16 h-16 brutal-card bg-emerald-400 flex items-center justify-center mb-6 group-hover:bg-yellow transition-colors">
+                    <i data-lucide="zap" class="w-8 h-8 text-black"></i>
+                </div>
+                <h3 class="text-2xl font-black uppercase">Pure CSS</h3>
+                <p class="text-sm leading-relaxed opacity-70 font-semibold">
+                    Ultra-lightweight implementation. We don't slow down your browser; we just speed up your serotonin.
+                </p>
+            </div>
+        </div>
+
+        <!-- News Section (Editorial Feel) -->
+        <div class="border-t-4 border-black pt-12 mb-24">
+            <h2 class="text-5xl font-black uppercase mb-8 text-center underline decoration-8 decoration-yellow underline-offset-8">Editor's Note</h2>
+            <div class="columns text-lg space-y-4 leading-relaxed font-medium">
+                <p class="italic font-black text-2xl block mb-4">"The internet was meant to be fun. We're bringing it back."</p>
+                <p>Social media has become a battleground of high-resolution stress. We believe that if you see a heated political argument inside a box that looks like it was drawn by a 5-year-old with a crayon, the world becomes a slightly better place.</p>
+                <p>Our commitment to <span class="highlight">Unseriousness</span> is absolute. We will continue to push the boundaries of experimental CSS to ensure that no tweet goes un-sketched.</p>
+                <p>This extension is not just a tool; it's a movement. A movement of people who prefer squiggly lines over quarterly earnings reports. Join us in the revolution of the silly.</p>
+            </div>
+        </div>
+
+        <!-- CTA Footer -->
+        <section class="brutal-card bg-ink p-12 text-center text-white space-y-8 mb-24">
+            <h2 class="text-5xl md:text-7xl font-black uppercase">Join the Silly Revolution</h2>
+            <p class="text-2xl opacity-80 max-w-2xl mx-auto">
+                Stop taking the internet so seriously. Download the unpacked extension and start your journey today.
+            </p>
+            <div class="pt-8">
+                <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink text-black text-2xl px-12 py-6">
+                    Download Now
+                </a>
+            </div>
+            <p class="text-xs uppercase opacity-40 font-black tracking-widest italic">
+                Requires Chrome 147+ or experimental flags enabled.
+            </p>
+        </section>
 
         <!-- Footer -->
-        <footer class="mt-12 pt-8 border-t-4 border-black text-center">
-            <p class="text-sm font-bold uppercase tracking-widest mb-4">Published by Túlio Sousa — &copy; 2026</p>
-            <div class="flex justify-center gap-6">
-                <a href="../PRIVACY.md" class="hover:underline text-xs">Privacy</a>
-                <a href="../TERMS.md" class="hover:underline text-xs">Terms</a>
-                <a href="../DISCLAIMER.md" class="hover:underline text-xs">Disclaimer</a>
+        <footer class="text-center space-y-6 pt-12 border-t-2 border-dashed border-black">
+            <div class="flex flex-wrap justify-center gap-8 font-black uppercase text-sm">
+                <a href="../PRIVACY.md" class="hover:text-accent">Privacy</a>
+                <a href="../TERMS.md" class="hover:text-accent">Terms</a>
+                <a href="../DISCLAIMER.md" class="hover:text-accent">Disclaimer</a>
+                <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="hover:text-accent">GitHub</a>
             </div>
-            <p class="mt-8 text-[10px] opacity-50 uppercase tracking-tighter">Not affiliated with X or Twitter. Obviously.</p>
+            <p class="text-xs font-bold opacity-60">
+                &copy; 2026 X Silly Feed. Built with pure spite for boring UIs. <br>
+                Independent project. No affiliation with X/Twitter Corp.
+            </p>
+            <div class="sketchy-text text-2xl text-accent opacity-50">
+                Wiggle wiggle!
+            </div>
         </footer>
     </div>
 
