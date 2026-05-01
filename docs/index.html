@@ -127,6 +127,26 @@
             transform: rotate(-1deg);
             border-radius: 100% 2% 100% 2%;
         }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .bento-item-large {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+            .bento-item-wide {
+                grid-column: span 2;
+            }
+        }
+
     </style>
 </head>
 <body class="paper-texture">
@@ -154,11 +174,12 @@
             <div class="flex items-center justify-center gap-4">
                 <span class="h-1 bg-black w-12 hidden md:block"></span>
                 <p class="text-xl md:text-3xl font-semibold italic">
-                    Stop <span class="marker-scribble">Doomscrolling</span>. Start <span class="sketchy-text text-accent text-4xl">Giggling</span>.
+                    Same <span class="marker-scribble">Doomscrolling</span>. More <span class="sketchy-text text-accent text-4xl">Giggles</span>.
                 </p>
                 <span class="h-1 bg-black w-12 hidden md:block"></span>
             </div>
         </header>
+
 
         <!-- Hero Section -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
@@ -166,32 +187,32 @@
                 <div class="brutal-card p-8 bg-paper relative">
                     <span class="absolute -top-4 -left-4 bg-yellow border-4 border-black px-4 py-1 font-black text-sm uppercase">Headline</span>
                     <h2 class="text-4xl md:text-6xl font-black leading-tight mb-6 uppercase">
-                        CSS Magic Transforms <br> Internet "Opinions" <br> Into Fine Art
+                        Make Your Boring Feed <br> Look Like a <br> Silly Sketch!
                     </h2>
                     <p class="text-xl leading-relaxed drop-cap mb-6 font-semibold">
-                        n a world where timelines are filled with 280-character manifestos and rage-bait, one extension dares to ask: "What if it all looked like a kid's drawing?" 
+                        X Silly Feed is a free tool for your browser. It doesn't stop you from looking at posts, but it makes every post look like a fun drawing. It’s doomscrolling, but way better!
                     </p>
                     <p class="text-lg leading-relaxed mb-8 opacity-80">
-                        X Silly Feed uses experimental <code class="bg-gray-100 px-2 py-1 border-2 border-black font-bold">border-shape</code> technology to wiggle your way into a better mental state.
+                        We use cool tech to make lines wiggle. Your timeline will look like it was drawn in a notebook with a thick marker.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink">
                             <i data-lucide="download" class="mr-2 w-5 h-5"></i>
-                            Get The Extension
+                            Add to Chrome (Free)
                         </a>
                         <a href="#features" class="brutal-btn bg-white">
-                            See How It Works
+                            See how it works
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="lg:col-span-5 flex items-center justify-center relative">
-                <div class="w-full aspect-square brutal-card bg-white flex items-center justify-center rotate-3 relative z-10">
+                <div class="w-full aspect-square brutal-card bg-white flex items-center justify-center rotate-3 relative z-10 border-dashed border-8 border-gray-200">
                      <div class="text-center p-8">
-                        <i data-lucide="sparkles" class="w-16 h-16 mx-auto mb-4 text-accent animate-pulse"></i>
-                        <p class="text-2xl font-black uppercase">Real-Time Sketching</p>
-                        <p class="text-sm opacity-60 italic">Fig 1. Actual simulation of joy.</p>
+                        <i data-lucide="image" class="w-24 h-24 mx-auto mb-4 text-gray-300"></i>
+                        <p class="text-3xl font-black uppercase text-gray-400">Future Demo Here</p>
+                        <p class="text-sm opacity-60 italic text-gray-400">Imagine a really cool sketch of your feed!</p>
                      </div>
                 </div>
                 <!-- Background decorative elements -->
@@ -202,6 +223,7 @@
             </div>
         </div>
 
+
         <!-- Section Divider -->
         <div class="flex items-center gap-4 mb-16">
             <div class="h-2 flex-grow border-y-2 border-black"></div>
@@ -209,79 +231,75 @@
             <div class="h-2 flex-grow border-y-2 border-black"></div>
         </div>
 
-        <!-- Features Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-            <!-- Feature 1 -->
-            <div class="space-y-4 group">
-                <div class="w-16 h-16 brutal-card bg-yellow flex items-center justify-center mb-6 group-hover:bg-accent transition-colors">
-                    <i data-lucide="pen-tool" class="w-8 h-8 text-black group-hover:text-white"></i>
+        <!-- Bento Features Grid -->
+        <div class="bento-grid mb-24">
+            <!-- Large Item -->
+            <div class="bento-item-large brutal-card p-8 bg-yellow flex flex-col justify-between group overflow-hidden relative">
+                <div class="relative z-10">
+                    <i data-lucide="pen-tool" class="w-16 h-16 text-black mb-6 group-hover:rotate-12 transition-transform"></i>
+                    <h3 class="text-4xl font-black uppercase mb-4">Hand-Drawn UI</h3>
+                    <p class="text-lg leading-relaxed font-semibold">
+                        Every box and button looks like it was drawn in a notebook. No more boring straight lines!
+                    </p>
                 </div>
-                <h3 class="text-2xl font-black uppercase">Hand-Drawn UI</h3>
-                <p class="text-sm leading-relaxed opacity-70 font-semibold">
-                    Every box, button, and profile picture gets the 'scribble' treatment. No more boring straight lines.
+                <div class="absolute bottom-0 right-0 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="pen-tool" class="w-48 h-48 -mr-12 -mb-12"></i>
+                </div>
+            </div>
+
+            <!-- Wide Item -->
+            <div class="bento-item-wide brutal-card p-8 bg-pink-400 group">
+                <div class="flex items-start gap-6">
+                    <div class="shrink-0">
+                        <i data-lucide="zap" class="w-12 h-12 text-black"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-black uppercase mb-2">Fast & Light</h3>
+                        <p class="text-sm leading-relaxed font-semibold">
+                            It won't slow you down. It just makes your serotonin go up!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Small Item 1 -->
+            <div class="brutal-card p-8 bg-blue-400 group">
+                <i data-lucide="shield-check" class="w-10 h-10 text-black mb-4"></i>
+                <h3 class="text-xl font-black uppercase mb-2">Total Privacy</h3>
+                <p class="text-xs font-semibold">
+                    We don't spy on you. We just make lines wiggle.
                 </p>
             </div>
 
-            <!-- Feature 2 -->
-            <div class="space-y-4 group">
-                <div class="w-16 h-16 brutal-card bg-pink-400 flex items-center justify-center mb-6 group-hover:bg-yellow transition-colors">
-                    <i data-lucide="type" class="w-8 h-8 text-black"></i>
-                </div>
-                <h3 class="text-2xl font-black uppercase">Newsprint Type</h3>
-                <p class="text-sm leading-relaxed opacity-70 font-semibold">
-                    Carefully curated font pairings that make even the worst "ratio" look like a respectable editorial piece.
-                </p>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="space-y-4 group">
-                <div class="w-16 h-16 brutal-card bg-blue-400 flex items-center justify-center mb-6 group-hover:bg-accent transition-colors">
-                    <i data-lucide="shield-check" class="w-8 h-8 text-black group-hover:text-white"></i>
-                </div>
-                <h3 class="text-2xl font-black uppercase">Zero Tracking</h3>
-                <p class="text-sm leading-relaxed opacity-70 font-semibold">
-                    Privacy isn't a joke. We collect 0.0% of your data. The only thing we track is your smile (locally).
-                </p>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="space-y-4 group">
-                <div class="w-16 h-16 brutal-card bg-emerald-400 flex items-center justify-center mb-6 group-hover:bg-yellow transition-colors">
-                    <i data-lucide="zap" class="w-8 h-8 text-black"></i>
-                </div>
-                <h3 class="text-2xl font-black uppercase">Pure CSS</h3>
-                <p class="text-sm leading-relaxed opacity-70 font-semibold">
-                    Ultra-lightweight implementation. We don't slow down your browser; we just speed up your serotonin.
+            <!-- Small Item 2 -->
+            <div class="brutal-card p-8 bg-emerald-400 group">
+                <i data-lucide="type" class="w-10 h-10 text-black mb-4"></i>
+                <h3 class="text-xl font-black uppercase mb-2">Fun Fonts</h3>
+                <p class="text-xs font-semibold">
+                    Better than those boring fonts you usually see.
                 </p>
             </div>
         </div>
 
-        <!-- News Section (Editorial Feel) -->
-        <div class="border-t-4 border-black pt-12 mb-24">
-            <h2 class="text-5xl font-black uppercase mb-8 text-center underline decoration-8 decoration-yellow underline-offset-8">Editor's Note</h2>
-            <div class="columns text-lg space-y-4 leading-relaxed font-medium">
-                <p class="italic font-black text-2xl block mb-4">"The internet was meant to be fun. We're bringing it back."</p>
-                <p>Social media has become a battleground of high-resolution stress. We believe that if you see a heated political argument inside a box that looks like it was drawn by a 5-year-old with a crayon, the world becomes a slightly better place.</p>
-                <p>Our commitment to <span class="highlight">Unseriousness</span> is absolute. We will continue to push the boundaries of experimental CSS to ensure that no tweet goes un-sketched.</p>
-                <p>This extension is not just a tool; it's a movement. A movement of people who prefer squiggly lines over quarterly earnings reports. Join us in the revolution of the silly.</p>
-            </div>
-        </div>
+
+
 
         <!-- CTA Footer -->
         <section class="brutal-card bg-ink p-12 text-center text-white space-y-8 mb-24">
-            <h2 class="text-5xl md:text-7xl font-black uppercase">Join the Silly Revolution</h2>
+            <h2 class="text-5xl md:text-7xl font-black uppercase">Join the Silly Fun</h2>
             <p class="text-2xl opacity-80 max-w-2xl mx-auto">
-                Stop taking the internet so seriously. Download the unpacked extension and start your journey today.
+                Stop looking at boring boxes. Make your timeline fun to look at!
             </p>
             <div class="pt-8">
                 <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="brutal-btn brutal-btn-pink text-black text-2xl px-12 py-6">
-                    Download Now
+                    Get it now
                 </a>
             </div>
             <p class="text-xs uppercase opacity-40 font-black tracking-widest italic">
-                Requires Chrome 147+ or experimental flags enabled.
+                It's free, it's fast, and it's fun!
             </p>
         </section>
+
 
         <!-- Footer -->
         <footer class="text-center space-y-6 pt-12 border-t-2 border-dashed border-black">

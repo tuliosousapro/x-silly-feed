@@ -1,25 +1,32 @@
-# Task List - X Silly Feed
+# Task List - X Silly Feed Landing Page Revamp
 
-- [x] Initialize project structure and mandatory files <!-- id: 0 -->
-- [x] Create `manifest.json` (V3) <!-- id: 1 -->
-- [x] Implement Background Service Worker for state management <!-- id: 2 -->
-- [x] Implement Popup UI with Toggle <!-- id: 3 -->
-- [x] Develop `styles.css` with `border-shape` rules <!-- id: 4 -->
-- [x] Implement Content Script to inject styles <!-- id: 5 -->
-- [x] Final verification and documentation update <!-- id: 6 -->
-- [x] Apply silly theme to `#layers` modal selector <!-- id: 7 -->
-- [x] Convert SVG icon to PNG (16, 32, 48, 128) <!-- id: 8 -->
-- [x] Update `manifest.json` with PNG icons <!-- id: 9 -->
-- [x] Create legal documentation (License, Privacy, Terms, Disclaimer) <!-- id: 10 -->
-- [x] Build themed landing page (sketchy newspaper style) <!-- id: 11 -->
-- [x] Rebuild landing page (v2) with Neubrutalism & move to `docs/` <!-- id: 12 -->
-- [x] Perform full security audit and documentation <!-- id: 13 -->
+- [x] Design Brutalist Bento Grid for Features <!-- id: 14 -->
+- [x] Implement 5th-Grade Level Copy (Fun & Clear) <!-- id: 15 -->
+- [x] Create Demo Placeholder (Sketch Style) <!-- id: 16 -->
+- [x] Update Typography to match "Notebook" feel <!-- id: 17 -->
+- [x] Final Responsive Check (Desktop & Mobile) <!-- id: 18 -->
 
 
+## Plan Details
 
+### 1. Hero Section
+- **Headline:** "Make Your Boring Feed Look Like a Silly Sketch!"
+- **Sub-headline:** "X Silly Feed is a free tool. It doesn't stop you from looking at posts, but it makes every post look like a fun drawing. It’s doomscrolling, but way better!"
+- **Demo:** Large sketch-style box with "FUTURE DEMO HERE" text.
 
+### 2. Features (Bento Grid)
+- **Block 1:** Hand-Drawn UI (It looks like a notebook!)
+- **Block 2:** Fast & Light (It won't slow you down)
+- **Block 3:** Total Privacy (We don't spy on you)
+- **Block 4:** Fun Fonts (Better than boring ones)
 
-## Review
-The extension is fully implemented using Manifest V3 and the experimental CSS `border-shape` property. It successfully transforms X.com into a silly, sketch-inspired newspaper style with organic borders and sketch-like typography. Toggle state is persisted and synced across tabs. Modal and popup support has been added for specific `#layers` elements.
+### 3. Visuals
+- Strict Brutalist (Sharp 4px borders, black shadows)
+- Squiggle effects on text
+- Paper texture (keep current)
 
-
+### 4. Language
+- 5th Grade Level
+- Fun and engaging
+- No grammar mistakes
+- Correct value prop: "More fun doomscrolling" not "Stop doomscrolling"
