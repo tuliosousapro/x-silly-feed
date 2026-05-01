@@ -9,6 +9,7 @@
 - [Humans](humans.txt): Information about the creator and tools used.
 - [Todo](tasks/todo.md): Current tasks and project roadmap.
 - [Lessons](tasks/lessons.md): Lessons learned and patterns identified during development.
+- [Security Audit](tasks/security-audit.md): Comprehensive security review of the project.
 
 ## Legal
 

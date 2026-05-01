@@ -13,6 +13,8 @@
 - [x] Create legal documentation (License, Privacy, Terms, Disclaimer) <!-- id: 10 -->
 - [x] Build themed landing page (sketchy newspaper style) <!-- id: 11 -->
 - [x] Rebuild landing page (v2) with Neubrutalism & move to `docs/` <!-- id: 12 -->
+- [x] Perform full security audit and documentation <!-- id: 13 -->
+
 
 
 

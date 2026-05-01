@@ -32,33 +32,39 @@ jobs:
         run: |
           echo '${{ secrets.CWS_SERVICE_ACCOUNT_JSON }}' > service-account.json
 
+      - name: Generate JWT Assertion
+        id: jwt
+        run: |
+          python - << 'PY'
+          import json, time, jwt, os
+          sa = json.load(open('service-account.json'))
+          now = int(time.time())
+          payload = {
+            'iss': sa['client_email'],
+            'scope': 'https://www.googleapis.com/auth/chromewebstore',
+            'aud': 'https://oauth2.googleapis.com/token',
+            'iat': now,
+            'exp': now + 3600,
+          }
+          assertion = jwt.encode(payload, sa['private_key'], algorithm='RS256')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'assertion={assertion}\n')
+          PY
+
       - name: Get access token
         id: token
         run: |
-          ACCESS_TOKEN=$(curl -s -X POST \
+          # Use a temporary file to store the response to avoid command substitution
+          curl -s -X POST \
             -H "Content-Type: application/json" \
             https://oauth2.googleapis.com/token \
-            -d @- <<EOF
-          {
-            "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-            "assertion": "$(python - << 'PY'
-import json, time, jwt
-sa = json.load(open('service-account.json'))
-now = int(time.time())
-payload = {
-  'iss': sa['client_email'],
-  'scope': 'https://www.googleapis.com/auth/chromewebstore',
-  'aud': 'https://oauth2.googleapis.com/token',
-  'iat': now,
-  'exp': now + 3600,
-}
-print(jwt.encode(payload, sa['private_key'], algorithm='RS256'))
-PY
-)"
-          }
-EOF
-          | jq -r '.access_token')
-          echo "token=$ACCESS_TOKEN" >> $GITHUB_OUTPUT
+            -d "{
+              \"grant_type\": \"urn:ietf:params:oauth:grant-type:jwt-bearer\",
+              \"assertion\": \"${{ steps.jwt.outputs.assertion }}\"
+            }" > token_response.json
+          
+          echo -n "token=" >> $GITHUB_OUTPUT
+          jq -r '.access_token' token_response.json >> $GITHUB_OUTPUT
 
       - name: Upload new version
         run: |
