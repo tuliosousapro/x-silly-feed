@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Legal documentation: Apache 2.0 License, Privacy Policy, Terms of Service, and Disclaimer.
 - `llms.txt` for better LLM navigation.
 - Sketch-inspired newspaper-themed landing page.
+- Comprehensive README.md overhaul inspired by SaaS-blueprint.
 
 
 ## [0.1.0] - 2026-05-01
