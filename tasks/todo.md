@@ -1,11 +1,11 @@
 # Task List - X Silly Feed Landing Page: The Living Notebook
 
-- [ ] Build "Paper & Ink" CSS Foundation (Vanilla CSS) <!-- id: 25 -->
-- [ ] Create Kinetic Typography Engine (Jitter effect) <!-- id: 26 -->
-- [ ] Implement "Silly Slider" Hero Section <!-- id: 27 -->
-- [ ] Design "Sticky Note" Bento Grid 2.0 <!-- id: 28 -->
-- [ ] Add Scroll-Triggered SVG Drawing Animations <!-- id: 29 -->
-- [ ] Performance Polish (Asset optimization, 95+ Lighthouse) <!-- id: 30 -->
+- [x] Build "Paper & Ink" CSS Foundation (Vanilla CSS) <!-- id: 25 -->
+- [x] Create Kinetic Typography Engine (Jitter effect) <!-- id: 26 -->
+- [x] Implement "Silly Slider" Hero Section <!-- id: 27 -->
+- [x] Design "Sticky Note" Bento Grid 2.0 <!-- id: 28 -->
+- [x] Add Scroll-Triggered SVG Drawing Animations <!-- id: 29 -->
+- [x] Performance Polish (Asset optimization, 95+ Lighthouse) <!-- id: 30 -->
 
 ## Plan Details
 

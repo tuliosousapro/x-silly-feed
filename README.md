@@ -4,7 +4,7 @@
 
 > **"Because your feed is already a joke, it might as well look like one."**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?style=for-the-badge)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?style=for-the-badge)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=for-the-badge)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-success.svg?style=for-the-badge&logo=google-chrome)](https://github.com/tuliosousapro/x-silly-feed-ui)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tuliosousapro/x-silly-feed-ui/pulls)
@@ -36,21 +36,23 @@ By leveraging the cutting-edge (and experimental) CSS `border-shape` property, w
 
 ## Features 🚀
 
+- **🎨 "The Living Notebook" UI**: A premium sketchbook experience with kinetic typography and hand-drawn aesthetics.
+- **🎚️ Silly Slider**: Interactive transformation demo allowing you to see the "Boring vs. Silly" transition in real-time.
+- **🖋️ Scroll-Triggered Doodles**: SVG drawing animations that trigger as you navigate the page.
 - **🎨 Organic Borders**: Real-time hand-drawn effects using experimental CSS `border-shape`. No bulky images, just pure math and ink.
-- **📜 Newspaper Aesthetic**: Custom typography pairings (Cormorant Garamond & Libre Baskerville) and paper-grain textures.
-- **⚡ Performance First**: Zero heavy libraries. Built with pure CSS and minimal JavaScript to ensure your feed stays fast.
+- **📜 Newspaper Aesthetic**: Custom typography pairings (Caveat, Permanent Marker, Fredoka) and paper-grain textures.
+- **⚡ Performance First**: Migrated to a pure Vanilla CSS architecture (No Tailwind) for sub-100ms render times.
 - **🛡️ Privacy Centric**: All processing happens locally on your machine. We don't track you, we don't log you, we just make you smile.
-- **🌑 Dark Mode Support**: Works beautifully in both light and dark themes (though we recommend light mode for the full newsprint feel!).
 
 ---
 
 ## Tech Stack 🛠️
 
 - **Extension Framework**: [Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/)
-- **Styles**: Experimental CSS (`border-shape`, `mask-image`)
-- **Logic**: Vanilla JavaScript
+- **Styles**: Pure Vanilla CSS (`border-shape`, `mask-image`, Custom SVG Filters)
+- **Logic**: Vanilla JavaScript (Scroll-driven animations, Silly Slider engine)
 - **Icons**: [Lucide Icons](https://lucide.dev/)
-- **Design System**: [UI Pro Max](https://github.com/tuliosousapro/x-silly-feed-ui/tree/main/design-system)
+- **Documentation**: [llms.txt](llms.txt) for AI-first context
 
 ---
 
@@ -92,7 +94,9 @@ Transform your timeline in under 60 seconds:
 - [x] `border-shape` implementation
 - [x] Popup UI & Toggle state
 - [x] Paper texture overlays
-- [ ] Custom "Silly Filter" intensity slider
+- [x] "The Living Notebook" Landing Page Revamp
+- [x] Interactive Silly Slider demo
+- [ ] Custom "Silly Filter" intensity slider (Inside the Extension)
 - [ ] Support for more #layers (modals/popups)
 - [ ] Exportable "Silly Screenshot" tool
 - [ ] Firefox/Safari support
@@ -124,3 +128,4 @@ Contributions are what make the internet silly! Whether it's fixing a CSS bug or
 
 **Since 2026** | [Túlio Sousa](https://github.com/tuliosousapro)
 > <a href="https://x.com/tuliosousapro"><img src="https://img.shields.io/badge/Follow_ME-000000.svg?style=for-the-badge&logo=X&logoColor=white"></a>
+

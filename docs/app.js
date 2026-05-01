@@ -1,70 +1,96 @@
+/**
+ * X Silly Feed: The Living Notebook
+ * Advanced interactions for the premium sketchbook experience.
+ */
+
 // Initialize Lucide Icons
 lucide.createIcons();
 
-// Silly Slider Logic
-const slider = document.getElementById('silly-slider');
-const layer = document.getElementById('silly-layer');
-const handle = document.getElementById('slider-handle');
+// --- Silly Slider Logic ---
+const sliderContainer = document.getElementById('silly-slider');
+const sillyLayer = document.getElementById('silly-layer');
+const sliderHandle = document.getElementById('slider-handle');
 
-let isResizing = false;
+if (sliderContainer && sillyLayer && sliderHandle) {
+    let isDragging = false;
 
-function updateSlider(x) {
-    const rect = slider.getBoundingClientRect();
-    let position = ((x - rect.left) / rect.width) * 100;
-    
-    // Constraints
-    position = Math.max(0, Math.min(100, position));
-    
-    layer.style.width = `${position}%`;
-    handle.style.left = `${position}%`;
+    const updateSlider = (clientX) => {
+        const rect = sliderContainer.getBoundingClientRect();
+        let x = clientX - rect.left;
+        
+        // Calculate percentage
+        let percentage = (x / rect.width) * 100;
+        percentage = Math.max(0, Math.min(100, percentage));
+        
+        // Apply to elements
+        sillyLayer.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        sliderHandle.style.left = `${percentage}%`;
+    };
+
+    const startDragging = (e) => {
+        isDragging = true;
+        updateSlider(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+    };
+
+    const stopDragging = () => {
+        isDragging = false;
+    };
+
+    const moveSlider = (e) => {
+        if (!isDragging) return;
+        updateSlider(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+    };
+
+    // Mouse Events
+    sliderContainer.addEventListener('mousedown', startDragging);
+    window.addEventListener('mousemove', moveSlider);
+    window.addEventListener('mouseup', stopDragging);
+
+    // Touch Events
+    sliderContainer.addEventListener('touchstart', startDragging);
+    window.addEventListener('touchmove', moveSlider);
+    window.addEventListener('touchend', stopDragging);
 }
 
-slider.addEventListener('mousedown', (e) => {
-    isResizing = true;
-    updateSlider(e.clientX);
-});
-
-window.addEventListener('mousemove', (e) => {
-    if (!isResizing) return;
-    updateSlider(e.clientX);
-});
-
-window.addEventListener('mouseup', () => {
-    isResizing = false;
-});
-
-// Touch support
-slider.addEventListener('touchstart', (e) => {
-    isResizing = true;
-    updateSlider(e.touches[0].clientX);
-});
-
-window.addEventListener('touchmove', (e) => {
-    if (!isResizing) return;
-    updateSlider(e.touches[0].clientX);
-});
-
-window.addEventListener('touchend', () => {
-    isResizing = false;
-});
-
-// Jitter Effect Pause on Hover
-document.querySelectorAll('.jitter').forEach(el => {
-    el.addEventListener('mouseenter', () => el.style.animationPlayState = 'paused');
-    el.addEventListener('mouseleave', () => el.style.animationPlayState = 'running');
-});
-
-// Scroll Reveal Scribbles
-const observerOptions = {
-    threshold: 0.5
+// --- Scroll-Triggered SVG Drawing ---
+const scribbleObserverOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const scribbleObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('scribble-active');
+            entry.target.classList.add('active');
+            // Optional: unobserve after trigger if you only want it to draw once
+            // scribbleObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, scribbleObserverOptions);
 
-document.querySelectorAll('.scribble-trigger').forEach(el => observer.observe(el));
+document.querySelectorAll('.scribble-trigger').forEach(el => {
+    scribbleObserver.observe(el);
+});
+
+// --- Dynamic Rotation for Bento Items ---
+// Adds a bit more randomness if not hardcoded in CSS
+document.querySelectorAll('.bento-item').forEach(item => {
+    if (!item.style.transform) {
+        const randomRot = (Math.random() * 4 - 2).toFixed(1);
+        item.style.setProperty('--rotation', randomRot);
+    }
+});
+
+// --- Smooth Navigation ---
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+

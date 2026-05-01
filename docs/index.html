@@ -1,120 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X Silly Feed | The Living Notebook</title>
+    <meta name="description" content="Transform your X.com experience into a hand-drawn sketchbook with X Silly Feed.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=Caveat:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Outfit:wght@300;400;600;700&family=Caveat:wght@400;700&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-    <!-- SVG Filters for Wobble -->
+    <!-- SVG Filters for Wobble Effect -->
     <svg style="display: none;">
         <defs>
             <filter id="wobble">
-                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
             </filter>
         </defs>
     </svg>
 
-    <nav class="container" style="padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 100;">
-        <div class="jitter" style="font-family: var(--font-marker); font-size: 1.5rem; border: 2px solid var(--ink); padding: 0.5rem 1rem; background: white; transform: rotate(-2deg);">
-            X SILLY FEED
-        </div>
-        <div style="display: flex; gap: 2rem; font-family: var(--font-hand); font-size: 1.25rem; font-weight: bold;">
-            <a href="#features" style="color: inherit; text-decoration: none;" class="highlight-yellow">Features</a>
-            <a href="#demo" style="color: inherit; text-decoration: none;" class="highlight-pink">Demo</a>
-            <a href="https://github.com/tuliosousapro/x-silly-feed-ui" style="color: inherit; text-decoration: none;">GitHub</a>
-        </div>
+    <!-- Sticky Tape Navbar -->
+    <nav class="tape-navbar">
+        <div class="jitter-low" style="font-family: var(--font-marker); font-size: 1.2rem;">X SILLY FEED</div>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#demo" class="nav-link">See Demo</a>
+        <a href="https://github.com/tuliosousapro/x-silly-feed" class="nav-link">GitHub</a>
     </nav>
 
-    <header class="container" style="padding: 6rem 0; text-align: center;">
-        <h1 style="font-size: clamp(3rem, 10vw, 6rem); margin-bottom: 2rem; position: relative; display: inline-block;">
-            Make Your Feed <br> 
-            <span class="highlight-yellow jitter scribble-trigger" style="position: relative;">
-                Way More Silly!
-                <svg class="scribble-container" viewBox="0 0 400 100" preserveAspectRatio="none">
-                    <path class="scribble-path" d="M10,80 Q100,95 200,85 T390,75" stroke="var(--pink)" />
+    <main>
+        <!-- Hero Section -->
+        <header class="container" style="padding: 4rem 0; text-align: center;">
+            <div style="position: relative; display: inline-block;">
+                <h1 style="font-size: clamp(3.5rem, 8vw, 7rem); margin-bottom: 1.5rem;">
+                    Your Feed, <br>
+                    <span class="jitter-high ink-highlight">But Silly!</span>
+                </h1>
+                <!-- Hero Scribble -->
+                <svg class="scribble-svg scribble-trigger" viewBox="0 0 500 200">
+                    <path class="scribble-path" d="M50,150 Q250,180 450,140" />
                 </svg>
-            </span>
-        </h1>
-        <p class="sketchy-text" style="font-size: 2rem; max-width: 800px; margin: 0 auto 3rem;">
-            X Silly Feed turns your boring social media into a fun, hand-drawn sketchbook. It's like <span class="highlight-pink">doomscrolling in a comic book!</span>
-        </p>
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-            <a href="#" class="btn">Get it for Chrome</a>
-            <a href="#demo" class="btn btn-pink">See the Magic</a>
-        </div>
-    </header>
-
-    <section id="demo" class="container" style="padding: 4rem 0;">
-        <div class="wobbly-box" style="padding: 0.5rem; background: #eee; overflow: hidden; position: relative;">
-            <div class="tape tape-top"></div>
-            <!-- Silly Slider Container -->
-            <div id="silly-slider" style="position: relative; width: 100%; aspect-ratio: 16/9; cursor: ew-resize; user-select: none;">
-                <!-- Boring Side -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff url('assets/image.png') no-repeat center/cover; filter: grayscale(1);">
-                </div>
-                <!-- Silly Side -->
-                <div id="silly-layer" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: #fff url('assets/image.png') no-repeat center/cover; border-right: 4px solid var(--pink); overflow: hidden; filter: url(#wobble) sepia(0.2) contrast(1.2);">
-                    <div style="position: absolute; top: 20px; right: 20px; background: var(--pink); color: white; padding: 0.5rem 1rem; font-family: var(--font-marker); transform: rotate(5deg);">SILLY!</div>
-                </div>
-                <!-- Handle -->
-                <div id="slider-handle" style="position: absolute; top: 0; left: 50%; width: 40px; height: 100%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; z-index: 10;">
-                    <div style="width: 4px; height: 100%; background: var(--pink);"></div>
-                    <div style="width: 40px; height: 40px; background: white; border: 3px solid var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                        <i data-lucide="move-horizontal" style="width: 20px; height: 20px;"></i>
-                    </div>
-                </div>
             </div>
-            <p class="sketchy-text" style="text-align: center; margin-top: 1.5rem; font-size: 1.5rem; font-weight: bold;">
-                <i data-lucide="arrow-up" style="vertical-align: middle; margin-right: 0.5rem;"></i>
-                Drag to see the transformation!
+            <p class="sketchy-text"
+                style="font-size: 2rem; max-width: 850px; margin: 2rem auto 4rem; font-weight: 700;">
+                X Silly Feed transforms your daily scroll into a <span class="jitter-low"
+                    style="color: var(--pink);">dynamic sketchbook</span>. It's Brutalist, it's hand-drawn, and it's
+                100% yours.
             </p>
-        </div>
-    </section>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="#" class="btn-sketch">
+                    <i data-lucide="download"></i> Get Extension
+                </a>
+                <a href="#demo" class="btn-sketch btn-secondary">
+                    <i data-lucide="play-circle"></i> Watch Magic
+                </a>
+            </div>
+        </header>
 
-    <section id="features" class="container" style="padding: 6rem 0;">
-        <h2 style="text-align: center; font-size: 3rem; margin-bottom: 4rem;">Why it's Awesome</h2>
-        <div class="bento-grid">
-            <div class="sticky-note note-yellow" style="--rotation: 0.2;">
-                <i data-lucide="pen-tool" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
-                <h3>Wobbly Lines</h3>
-                <p class="sketchy-text" style="font-size: 1.25rem;">Every post box and button is redrawn with sketchy, irregular lines. It feels alive!</p>
+        <!-- Interactive Demo Stage -->
+        <section id="demo" class="container" style="padding: 6rem 0;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem;">The Transformation</h2>
+                <p class="sketchy-text" style="font-size: 1.5rem;">Drag the slider to reveal the silliness!</p>
             </div>
-            <div class="sticky-note note-pink" style="--rotation: -0.5;">
-                <i data-lucide="zap" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
-                <h3>Supafast</h3>
-                <p class="sketchy-text" style="font-size: 1.25rem;">Zero lag. Maximum giggle-per-second performance. We use lightweight SVG magic.</p>
-            </div>
-            <div class="sticky-note note-blue" style="--rotation: 0.8;">
-                <i data-lucide="lock" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
-                <h3>Private</h3>
-                <p class="sketchy-text" style="font-size: 1.25rem;">No tracking. No spying. Just locally rendered wiggles on your screen.</p>
-            </div>
-            <div class="sticky-note note-green" style="--rotation: -0.3;">
-                <i data-lucide="laugh" style="width: 3rem; height: 3rem; margin-bottom: 1rem;"></i>
-                <h3>Pure Fun</h3>
-                <p class="sketchy-text" style="font-size: 1.25rem;">Because the internet is too serious. Let's make it look like a notebook!</p>
-            </div>
-        </div>
-    </section>
 
-    <footer class="container" style="padding: 4rem 0; text-align: center; border-top: 3px dashed var(--ink);">
-        <p class="sketchy-text" style="font-size: 1.25rem; margin-bottom: 1rem;">
-            Built with <i data-lucide="heart" style="width: 1rem; height: 1rem; fill: var(--pink); color: var(--pink);"></i> by Túlio Sousa
+            <div class="slider-stage">
+                <div class="slider-container" id="silly-slider">
+                    <!-- Boring Layer -->
+                    <div class="slider-layer layer-boring" style="background-image: url('assets/image.png');"></div>
+                    <!-- Silly Layer -->
+                    <div class="slider-layer layer-silly" id="silly-layer"
+                        style="background-image: url('assets/image.png');">
+                        <div
+                            style="position: absolute; top: 30px; left: 30px; background: var(--pink); color: white; padding: 0.5rem 1.5rem; font-family: var(--font-marker); transform: rotate(-8deg); font-size: 1.5rem; box-shadow: 4px 4px 0 var(--ink);">
+                            TOTAL CHAOS!
+                        </div>
+                    </div>
+                    <!-- Handle -->
+                    <div class="slider-handle" id="slider-handle"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Desk Features -->
+        <section id="features" class="container" style="padding: 6rem 0;">
+            <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 5rem;" class="jitter-low">Notebook Features
+            </h2>
+
+            <div class="bento-desk">
+                <!-- Large Item 1 -->
+                <article class="bento-item bento-large item-1">
+                    <i data-lucide="pen-tool"
+                        style="width: 4rem; height: 4rem; color: var(--pink); margin-bottom: 1.5rem;"></i>
+                    <h3>Hand-Drawn DNA</h3>
+                    <p class="sketchy-text" style="font-size: 1.4rem; margin-top: 1rem;">
+                        Every UI element on X is replaced with high-fidelity, hand-sketched versions. From the sidebar
+                        to the tiny heart icons, it's all art.
+                    </p>
+                    <svg class="scribble-svg scribble-trigger" viewBox="0 0 400 150">
+                        <path class="scribble-path" d="M20,130 C100,140 300,120 380,130" />
+                    </svg>
+                </article>
+
+                <!-- Small Item 1 -->
+                <article class="bento-item bento-small item-2">
+                    <i data-lucide="zap"
+                        style="width: 3rem; height: 3rem; color: var(--orange); margin-bottom: 1rem;"></i>
+                    <h3>60 FPS Wiggles</h3>
+                    <p class="sketchy-text" style="font-size: 1.2rem;">
+                        Optimized SVG filters ensure smooth jitter animations without killing your CPU.
+                    </p>
+                </article>
+
+                <!-- Small Item 2 -->
+                <article class="bento-item bento-small item-3">
+                    <i data-lucide="eye-off"
+                        style="width: 3rem; height: 3rem; color: var(--blue); margin-bottom: 1rem;"></i>
+                    <h3>Zero Tracking</h3>
+                    <p class="sketchy-text" style="font-size: 1.2rem;">
+                        Your data stays on your paper. No cloud, no tracking, just local silliness.
+                    </p>
+                </article>
+
+                <!-- Large Item 2 -->
+                <article class="bento-item bento-large item-4">
+                    <i data-lucide="layout"
+                        style="width: 4rem; height: 4rem; color: var(--green); margin-bottom: 1.5rem;"></i>
+                    <h3>The Living Notebook</h3>
+                    <p class="sketchy-text" style="font-size: 1.4rem; margin-top: 1rem;">
+                        X Silly Feed adapts to your browsing. It feels like you're reading a diary from the future, or a
+                        comic book from the past.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="container" style="padding: 8rem 0; text-align: center;">
+            <div class="bento-item item-2" style="max-width: 800px; margin: 0 auto; padding: 4rem;">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Ready to Ditch the Boring?</h2>
+                <a href="#" class="btn-sketch btn-secondary" style="font-size: 2rem;">
+                    Download Now <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container"
+        style="padding: 4rem 0; text-align: center; border-top: 3px dashed var(--ink); margin-top: 4rem;">
+        <p class="sketchy-text" style="font-size: 1.5rem; font-weight: 700;">
+            Made with <i data-lucide="zap" style="fill: var(--yellow); color: var(--ink);"></i> by Túlio Sousa
         </p>
-        <div style="display: flex; justify-content: center; gap: 2rem; font-family: var(--font-hand); font-weight: bold;">
-            <a href="page.html?doc=PRIVACY" style="color: inherit;">Privacy</a>
-            <a href="page.html?doc=TERMS" style="color: inherit;">Terms</a>
-            <a href="https://github.com/tuliosousapro/x-silly-feed-ui" style="color: inherit;">GitHub</a>
-        </div>
+        <nav style="display: flex; justify-content: center; gap: 3rem; margin-top: 2rem;">
+            <a href="page.html?doc=PRIVACY" class="nav-link">Privacy</a>
+            <a href="page.html?doc=TERMS" class="nav-link">Terms</a>
+            <a href="https://github.com/tuliosousapro/x-silly-feed-ui" class="nav-link">GitHub</a>
+        </nav>
     </footer>
 
     <script src="app.js"></script>
 </body>
+
 </html>
