@@ -106,7 +106,7 @@ This project is fully documented for both humans and machines:
 - **[License](LICENSE)**: Apache 2.0 (Attribution required)
 - **[Privacy Policy](PRIVACY.md)**: We collect zero data.
 - **[Terms of Service](TERMS.md)**: The fine print.
-- **[Disclaimer](DISCLAIMER.md)**: Not affiliated with X or Twitter.
+- **[Disclaimer](DISCLAIMER.md)**: X Silly Feed is an independent, community-driven project. It is not affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with X Corp, Twitter, or any of its subsidiaries or its affiliates.
 
 ---
 
@@ -122,8 +122,5 @@ Contributions are what make the internet silly! Whether it's fixing a CSS bug or
 
 ---
 
-<div align="center">
-
-Built with 🖋️ and ☕ by [Túlio Sousa](https://github.com/tuliosousapro)
-
-</div>
+**Since 2026** | [Túlio Sousa](https://github.com/tuliosousapro)
+> <a href="https://x.com/tuliosousapro"><img src="https://img.shields.io/badge/Follow_ME-000000.svg?style=for-the-badge&logo=X&logoColor=white"></a>
