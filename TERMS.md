@@ -32,4 +32,3 @@ We reserve the right to modify these terms at any time. Your continued use of th
 
 ## 7. Contact
 
-For support or inquiries, please visit: [https://github.com/tuliosousapro/x-silly-feed-ui](https://github.com/tuliosousapro/x-silly-feed-ui)

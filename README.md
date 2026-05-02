@@ -4,10 +4,9 @@
 
 > **"Because your feed is already a joke, it might as well look like one."**
 
-[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?style=for-the-badge)](CHANGELOG.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=for-the-badge)](LICENSE)
-[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-success.svg?style=for-the-badge&logo=google-chrome)](https://github.com/tuliosousapro/x-silly-feed-ui)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tuliosousapro/x-silly-feed-ui/pulls)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-success.svg?style=for-the-badge&logo=google-chrome)](https://github.com/tuliosousapro/x-silly-feed)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tuliosousapro/x-silly-feed/pulls)
 
 </div>
 
@@ -62,7 +61,7 @@ Transform your timeline in under 60 seconds:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/tuliosousapro/x-silly-feed-ui.git
+   git clone https://github.com/tuliosousapro/x-silly-feed.git
    ```
 
 2. **Open Extensions**:

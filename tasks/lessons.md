@@ -6,4 +6,3 @@
 - *Vanilla Migration*: Migrating from Tailwind to Vanilla CSS allows for better control over complex animations (like kinetic typography) and reduces the final payload significantly for landing pages.
 - *SVG Drawing*: Using `stroke-dasharray` and `stroke-dashoffset` combined with `IntersectionObserver` provides a high-performance "drawing" effect that feels extremely premium in sketchbook designs.
 - *Slider Logic*: Use `clip-path: inset()` for image comparison sliders to avoid layout shifts and ensure pixel-perfect alignment between layers.
-
