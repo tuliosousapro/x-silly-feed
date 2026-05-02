@@ -4,7 +4,6 @@
 
 > **"Because your feed is already a joke, it might as well look like one."**
 
-[![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=for-the-badge)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-success.svg?style=for-the-badge&logo=google-chrome)](https://github.com/tuliosousapro/x-silly-feed)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tuliosousapro/x-silly-feed/pulls)
 

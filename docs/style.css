@@ -320,6 +320,7 @@ h1, h2, h3, h4 {
     border-radius: 100% 10% 100% 10%;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .bento-desk {
         grid-template-columns: 1fr;

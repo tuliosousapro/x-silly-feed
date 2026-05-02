@@ -6,10 +6,7 @@
 - [x] Design "Sticky Note" Bento Grid 2.0 <!-- id: 28 -->
 - [x] Add Scroll-Triggered SVG Drawing Animations <!-- id: 29 -->
 - [x] Performance Polish (Asset optimization, 95+ Lighthouse) <!-- id: 30 -->
-- [x] Fix linking errors in docs directory <!-- id: 31 -->
-- [x] Add Setup Instructions section to landing page <!-- id: 32 -->
 
-## Plan Details
 
 ### 1. Hero: "The Silly Slider"
 - **Interaction**: A slider that users can drag to see a "Boring" feed turn into a "Silly" one.

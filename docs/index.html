@@ -29,6 +29,8 @@
     <!-- Sticky Tape Navbar -->
     <nav class="tape-navbar">
         <div class="jitter-low" style="font-family: var(--font-marker); font-size: 1.2rem;">X SILLY FEED</div>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#demo" class="nav-link">See Demo</a>
         <a href="https://github.com/tuliosousapro/x-silly-feed" class="nav-link">GitHub</a>
     </nav>
 
@@ -52,6 +54,9 @@
                 100% yours.
             </p>
             <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="#" class="btn-sketch">
+                    <i data-lucide="download"></i> Get Extension
+                </a>
                 <a href="#demo" class="btn-sketch btn-secondary">
                     <i data-lucide="play-circle"></i> Watch Magic
                 </a>
@@ -83,6 +88,7 @@
             </div>
         </section>
 
+        <!-- Bento Desk Features -->
         <section id="features" class="container" style="padding: 6rem 0;">
             <h2 style="text-align: center; font-size: 3.5rem; margin-bottom: 5rem;" class="jitter-low">Notebook Features
             </h2>
@@ -135,10 +141,96 @@
             </div>
         </section>
 
+        <!-- Quickstart Guide -->
+        <section id="setup" class="container" style="padding: 6rem 0;">
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 style="font-size: 3.5rem;" class="jitter-low">Quickstart Guide ⚡</h2>
+                <p class="sketchy-text" style="font-size: 1.5rem;">Transform your timeline in under 60 seconds!</p>
+            </div>
+
+            <div class="bento-desk" style="margin-top: 2rem;">
+                <!-- Step 1 -->
+                <article class="bento-item bento-small item-1">
+                    <div
+                        style="position: absolute; top: -15px; left: -15px; background: var(--ink); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-family: var(--font-marker); font-size: 1.5rem; transform: rotate(-10deg); box-shadow: 4px 4px 0 var(--pink);">
+                        1
+                    </div>
+                    <i data-lucide="git-pull-request"
+                        style="width: 2.5rem; height: 2.5rem; color: var(--pink); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem;">Clone Repo</h3>
+                    <p class="sketchy-text" style="font-size: 1.1rem; margin-top: 0.5rem;">Grab the source code from
+                        GitHub.</p>
+                    <code
+                        style="display: block; background: rgba(0,0,0,0.05); padding: 0.75rem; margin-top: 1rem; font-family: monospace; font-size: 0.8rem; border-left: 3px solid var(--pink); overflow-x: auto;">
+                        git clone https://github.com/tuliosousapro/x-silly-feed.git
+                    </code>
+                </article>
+
+                <!-- Step 2 -->
+                <article class="bento-item bento-small item-2">
+                    <div
+                        style="position: absolute; top: -15px; left: -15px; background: var(--ink); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-family: var(--font-marker); font-size: 1.5rem; transform: rotate(5deg); box-shadow: 4px 4px 0 var(--yellow);">
+                        2
+                    </div>
+                    <i data-lucide="layout-grid"
+                        style="width: 2.5rem; height: 2.5rem; color: var(--orange); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem;">Extensions</h3>
+                    <p class="sketchy-text" style="font-size: 1.1rem; margin-top: 0.5rem;">Open
+                        <code>chrome://extensions</code> in your browser.</p>
+                </article>
+
+                <!-- Step 3 -->
+                <article class="bento-item bento-small item-3">
+                    <div
+                        style="position: absolute; top: -15px; left: -15px; background: var(--ink); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-family: var(--font-marker); font-size: 1.5rem; transform: rotate(-5deg); box-shadow: 4px 4px 0 var(--blue);">
+                        3
+                    </div>
+                    <i data-lucide="toggle-right"
+                        style="width: 2.5rem; height: 2.5rem; color: var(--blue); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem;">Dev Mode</h3>
+                    <p class="sketchy-text" style="font-size: 1.1rem; margin-top: 0.5rem;">Toggle "Developer mode" in the
+                        top-right corner.</p>
+                </article>
+
+                <!-- Step 4 -->
+                <article class="bento-item bento-small item-4">
+                    <div
+                        style="position: absolute; top: -15px; left: -15px; background: var(--ink); color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-family: var(--font-marker); font-size: 1.5rem; transform: rotate(10deg); box-shadow: 4px 4px 0 var(--green);">
+                        4
+                    </div>
+                    <i data-lucide="folder-open"
+                        style="width: 2.5rem; height: 2.5rem; color: var(--green); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.5rem;">Load Unpacked</h3>
+                    <p class="sketchy-text" style="font-size: 1.1rem; margin-top: 0.5rem;">Click "Load unpacked" and
+                        select the project folder.</p>
+                </article>
+            </div>
+
+            <!-- Important Note -->
+            <div class="bento-item item-3"
+                style="margin-top: 4rem; border-style: dashed; background: #fff9db; transform: rotate(-0.5deg);">
+                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                    <i data-lucide="alert-circle" style="width: 3rem; height: 3rem; color: var(--ink); flex-shrink: 0;"></i>
+                    <div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Experimental Features Required!</h3>
+                        <p class="sketchy-text" style="font-size: 1.3rem;">
+                            To see the <strong>border-shape</strong> effects, you need Chrome 147+ (Canary) or enable the
+                            <code
+                                style="background: rgba(0,0,0,0.05); padding: 0.2rem 0.5rem;">Experimental Web Platform features</code>
+                            flag in <code>chrome://flags</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section class="container" style="padding: 8rem 0; text-align: center;">
             <div class="bento-item item-2" style="max-width: 800px; margin: 0 auto; padding: 4rem;">
                 <h2 style="font-size: 3rem; margin-bottom: 2rem;">Ready to Ditch the Boring?</h2>
+                <a href="#" class="btn-sketch btn-secondary" style="font-size: 2rem;">
+                    Download Now <i data-lucide="arrow-right"></i>
+                </a>
             </div>
         </section>
     </main>
