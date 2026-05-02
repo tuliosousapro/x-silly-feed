@@ -118,13 +118,4 @@ html.silly-enabled ::-webkit-scrollbar-thumb {
   border-radius: 0;
 }
 
-/* Modals and Popups */
-html.silly-enabled #layers > div:nth-child(2) > div > div > div > div > div > div.css-175oi2r.r-1ny4l3l.r-18u37iz.r-1pi2tsx.r-1777fci.r-1xcajam.r-ipm5af.r-g6jmlv.r-1habvwh > div.css-175oi2r.r-1wbh5a2.r-htvplk.r-1udh08x.r-1867qdf.r-rsyp9y.r-1pjcn9w.r-1potc6q {
-  background-color: var(--silly-paper) !important;
-  border: var(--silly-border) !important;
-  border-shape: polygon(
-    2% 2%, 98% 0%, 100% 98%, 0% 100%
-  ) !important;
-  box-shadow: 10px 10px 0px rgba(0,0,0,0.1) !important;
-}
 

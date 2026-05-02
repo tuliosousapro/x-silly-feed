@@ -4,6 +4,8 @@
 
 > **"Because your feed is already a joke, it might as well look like one."**
 
+[![Version](https://img.shields.io/badge/version-0.2.3-blue.svg?style=for-the-badge)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-Apache--2.0-orange.svg?style=for-the-badge)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Extension-success.svg?style=for-the-badge&logo=google-chrome)](https://github.com/tuliosousapro/x-silly-feed)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)](https://github.com/tuliosousapro/x-silly-feed/pulls)
 
@@ -94,8 +96,8 @@ Transform your timeline in under 60 seconds:
 - [x] Paper texture overlays
 - [x] "The Living Notebook" Landing Page Revamp
 - [x] Interactive Silly Slider demo
+- [x] Support for more #layers (modals/popups)
 - [ ] Custom "Silly Filter" intensity slider (Inside the Extension)
-- [ ] Support for more #layers (modals/popups)
 - [ ] Exportable "Silly Screenshot" tool
 - [ ] Firefox/Safari support
 
@@ -126,4 +128,3 @@ Contributions are what make the internet silly! Whether it's fixing a CSS bug or
 
 **Since 2026** | [Túlio Sousa](https://github.com/tuliosousapro)
 > <a href="https://x.com/tuliosousapro"><img src="https://img.shields.io/badge/Follow_ME-000000.svg?style=for-the-badge&logo=X&logoColor=white"></a>
-
