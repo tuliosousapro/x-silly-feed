@@ -5,7 +5,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-05-01
 
 ### Added
 - Complete landing page rebuild: "The Living Notebook" experience.
@@ -15,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sticky Tape Navbar with custom tape visual elements.
 - Wobbly Bento Grid 2.0 with irregular rotations and overlapping notes.
 - Custom ink-bleed and paper texture CSS tokens.
+- Fixed demo slider: Corrected 'Boring' vs 'Silly' screenshot mapping.
 - Legal documentation: Privacy Policy, Terms, and Disclaimer.
 - `llms.txt` for enhanced AI context.
 
